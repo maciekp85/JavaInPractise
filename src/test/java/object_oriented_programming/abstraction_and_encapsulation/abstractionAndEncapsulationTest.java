@@ -34,7 +34,7 @@ public class abstractionAndEncapsulationTest {
 
     @After
     public void tearDown() {
-        System.out.println("Cleaning after test");
+        System.out.println("Cleaning after " + this.getClass().getSimpleName());
     }
 
 
