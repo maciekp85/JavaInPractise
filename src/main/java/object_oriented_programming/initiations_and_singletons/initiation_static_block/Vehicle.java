@@ -1,10 +1,9 @@
-package object_oriented_programming.initiations_and_singletons;
+package object_oriented_programming.initiations_and_singletons.initiation_static_block;
 
 import object_oriented_programming.abstraction_and_encapsulation.hermet.VehState;
 
-import java.util.Calendar;
+import java.util.Locale;
 
-import static object_oriented_programming.abstraction_and_encapsulation.hermet.VehState.MOVING;
 import static object_oriented_programming.abstraction_and_encapsulation.hermet.VehState.STOPPED;
 
 /**
@@ -16,22 +15,27 @@ public class Vehicle {
     private int length;
     private int weight;
     private static int initNr;
-    private int currNr = ++initNr;
     private Person owner;
     private VehState state;
 
-    // Non-static initial block
-    // on sunday all vehicles stop first
-    // on monday vehicles with even numbers drive, other stops
-    // on other days of week, all vehicles drive
-    {
-        int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
-        switch (dayOfWeek) {
-            case Calendar.SUNDAY: state = STOPPED; break;
-            case Calendar.MONDAY: state = (currNr % 2 == 0 ? MOVING : STOPPED); break;
-            default: state = MOVING; break;
+    // Static initial block
+    // using it we initialize initNr variable in way that vehicles numbers start in depend on default localization of application
+    // for example: of an application is executed with italian localization, numbers start from 10000.
+
+    static {
+        Locale [] loc = { Locale.UK, Locale.US, Locale.JAPAN, Locale.ITALY};
+        int [] begNr = {1, 100, 1000, 10000};
+        initNr = 200;   // if an application works in other from among mentioned into geo localization array, numbers start from 200
+        Locale defLoc = Locale.getDefault();    // what is default localization?
+        for(int i=0; i<loc.length; i++) {
+            if(defLoc.equals(loc[i])) {
+                initNr = begNr[i];
+                break;
+            }
         }
     } // end of block
+
+    private int currNr = initNr;
 
     Vehicle(int w, int h, int l, int ww) {
         this(null, w, h, l, ww);
@@ -84,7 +88,7 @@ public class Vehicle {
     }
 
     public String toString() {
-        String s = this.owner == null?"shop":this.owner.getName();
+        String s = this.owner == null?"sklep":this.owner.getName();
         return "Vehicle whose owner is " + s + " is able to " + this.state;
     }
 

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by nishi on 2016-07-04.
  */
-public class initiationsAndSingletonsTest {
+public class InitiationsAndSingletonsTest {
 
     private Person personNumber1, personNumber2;
     private List<Vehicle> vehicles;

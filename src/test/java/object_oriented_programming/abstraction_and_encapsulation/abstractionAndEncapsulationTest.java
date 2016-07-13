@@ -9,7 +9,7 @@ import org.junit.Test;
 /**
  * Created by nishi on 2016-07-04.
  */
-public class abstractionAndEncapsulationTest {
+public class AbstractionAndEncapsulationTest {
 
     private Person person;
     private Vehicle vehicle;
