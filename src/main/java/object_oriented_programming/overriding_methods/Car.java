@@ -25,6 +25,7 @@ public class Car extends Vehicle {
         return this;
     }
 
+    @Override
     public Car start() {
         if(fuel > 0) super.start();
         else {
@@ -34,11 +35,13 @@ public class Car extends Vehicle {
         return this;
     }
 
+    @Override
     public Car stop() {
         super.stop();
         return this;
     }
 
+    @Override
     public String toString() {
         return "Car with registration number " + nrRej + " - " + getState();
     }

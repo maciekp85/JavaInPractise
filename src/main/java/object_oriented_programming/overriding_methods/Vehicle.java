@@ -75,6 +75,7 @@ public class Vehicle {
         return this;
     }
 
+    @Override
     public String toString() {
         String s = this.owner == null?"shop":this.owner.getName();
         return "Vehicle whose owner is " + s + " is able to " + this.state;

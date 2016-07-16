@@ -48,11 +48,11 @@ public class OverridingMethodsTest {
     private Boolean startCar(Car car) {
         try {
             car.start();
-            assertEquals("Car with registration number " + car.getNrRej() + " - MOVING" ,car.toString());
+            assertEquals("Car with registration number " + car.getNrRej() + " - JEDZIE" ,car.toString());
             System.out.println(car);
             return true;
         } catch (Exception exc) {
-            assertEquals("Car with registration number " + car.getNrRej() + " - STOPPED" + " - No fuel" ,(car + " - " + exc.getMessage()));
+            assertEquals("Car with registration number " + car.getNrRej() + " - STOI" + " - No fuel" ,(car + " - " + exc.getMessage()));
             System.out.println(car + " - " + exc.getMessage());
             return false;
         }
