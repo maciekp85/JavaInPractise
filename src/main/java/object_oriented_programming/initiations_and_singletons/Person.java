@@ -2,6 +2,7 @@ package object_oriented_programming.initiations_and_singletons;
 
 /**
  * Created by nishi on 2016-07-04.
+ * Based on example from the "Java Programowanie praktyczne od podstaw" book by Krzysztof Barteczko
  */
 public class Person {
     private String name;

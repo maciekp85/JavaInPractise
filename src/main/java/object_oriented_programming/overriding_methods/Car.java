@@ -2,6 +2,7 @@ package object_oriented_programming.overriding_methods;
 
 /**
  * Created by nishi on 2016-07-15.
+ * Based on example from the "Java Programowanie praktyczne od podstaw" book by Krzysztof Barteczko
  */
 public class Car extends Vehicle {
 

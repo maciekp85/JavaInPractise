@@ -3,6 +3,7 @@ import object_oriented_programming.abstraction_and_encapsulation.hermet.VehState
 
 /**
  * Created by nishi on 2016-07-04.
+ * Based on example from the "Java Programowanie praktyczne od podstaw" book by Krzysztof Barteczko
  */
 public class Vehicle {
     private int width;
